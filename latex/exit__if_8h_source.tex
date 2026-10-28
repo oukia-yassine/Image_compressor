@@ -1,0 +1,15 @@
+\doxysection{exit\+\_\+if.\+h}
+\hypertarget{exit__if_8h_source}{}\label{exit__if_8h_source}\index{include/exit\_if.h@{include/exit\_if.h}}
+\mbox{\hyperlink{exit__if_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ EXIT\_IF\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ EXIT\_IF\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#define\ EXIT\_IF(expr,mess,type)\ \(\backslash\)}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{((expr)\(\backslash\)}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{?\ (fprintf(stderr,"{}>EXIT:\%s:\%d:\ \%s\ \%s\(\backslash\)n"{},\_\_FILE\_\_,\_\_LINE\_\_,mess,type),exit(1))\ :0)}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ EXIT\_IF\_H\ */}\textcolor{preprocessor}{}}
+
+\end{DoxyCode}

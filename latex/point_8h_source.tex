@@ -1,0 +1,54 @@
+\doxysection{point.\+h}
+\hypertarget{point_8h_source}{}\label{point_8h_source}\index{include/point.h@{include/point.h}}
+\mbox{\hyperlink{point_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ POINT\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ POINT\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{classe_8h}{classe.h}}"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{move__type_8h}{move\_type.h}}"{}}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__obj_8h}{type\_obj.h}}"{}}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00008\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpoint}{point}}}
+\DoxyCodeLine{00009\ \{}
+\DoxyCodeLine{00010\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpoint_a6ccac60b29bc976c44e7eb94136b4e97}{coordx}};}
+\DoxyCodeLine{00011\ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{structpoint_a93990a42ef65e4dd01f75929cca4aed3}{coordy}};}
+\DoxyCodeLine{00012\ \};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \mbox{\hyperlink{classe_8h_a9d983f45e05b887e246d8e5c8904cdfa}{CLASSE}}(\mbox{\hyperlink{structpoint}{point}});}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structpoint}{point}}\ \mbox{\hyperlink{structpoint}{Point}};}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#define\ EGAL\_POINT(P1,P2)\ \(\backslash\)}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{(\ (\ (P1).coordx\ ==\ (P2).coordx\ )\&\&(\ (P1).coordy\ ==\ (P2).coordy\ )\ )}}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#define\ COORDX(P)\ ((P).coordx)}}
+\DoxyCodeLine{00022\ \textcolor{preprocessor}{\#define\ COORDY(P)\ ((P).coordy)}}
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ IS\_RIGHTER\_POINT(p1,p2)\(\backslash\)}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{((p1).coordx\ >\ (p2).coordx)}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ AFFECTE\_POINT(p1,p2)\ ((p1).coordx\ =\ (p2).coordx,\(\backslash\)}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (p1).coordy\ =\ (p2).coordy)}}
+\DoxyCodeLine{00027\ }
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#define\ MOVE\_RIGHT\_POINT(p)\ (\ (p).coordx++\ )}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#define\ MOVE\_LEFT\_POINT(p)\ (\ (p).coordx-\/-\/)}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#define\ MOVE\_UP\_POINT(p)\ (\ (p).coordy-\/-\/)}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#define\ MOVE\_DOWN\_POINT(p)\ (\ (p).coordy++)}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ NULL\_POINT(p)\ (p\ ==\ NULL)}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#define\ INFINITE\_POINT(p)\ \(\backslash\)}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{(\ (\ (p).coordx\ ==\ INFINITE\ )\ \&\&\ (\ (p).coordy\ ==\ INFINITE\ )\ )}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point_8h_ab42c4f8437ddb2abc9e204b7d90d4139}{modify\_point\_position}}\ (\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}});}
+\DoxyCodeLine{00039\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point_8h_a9b875dbd9690d1fdee8011b18eb13292}{point\_affiche}}\ \ \ \ \ \ \ \ \ (\mbox{\hyperlink{structpoint}{point}});}
+\DoxyCodeLine{00040\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point_8h_a117139f2c176c947eb54dc0f41a6aaaa}{point\_give\_adjacents}}\ \ (\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}},\mbox{\hyperlink{structpoint}{point}});}
+\DoxyCodeLine{00041\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point_8h_aef32fdee2aa44dfad193e3445632ced8}{point\_translate}}\ \ \ \ \ \ \ (\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}});}
+\DoxyCodeLine{00042\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{point_8h_a42e1ab2782e4e4fdb34559cbf326b282}{point\_give\_right\_point}}(\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}},\mbox{\hyperlink{structpoint}{point}});}
+\DoxyCodeLine{00043\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{void}\ \ \mbox{\hyperlink{point_8h_ae6c9a0a7cc102daa6593262c757ea59f}{point\_give\_p\_1\_2}}\ \ \ \ \ (\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{structpoint}{point}},\mbox{\hyperlink{type__obj_8h_a32f576b41a184865053dc7390fd030c5}{angle}}*);}
+\DoxyCodeLine{00044\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ POINT\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ }
+
+\end{DoxyCode}

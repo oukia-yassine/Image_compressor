@@ -1,0 +1,95 @@
+\doxysection{Référence du fichier src/quantification\+L\+\_\+1\+\_\+2.c}
+\hypertarget{quantificationL__1__2_8c}{}\label{quantificationL__1__2_8c}\index{src/quantificationL\_1\_2.c@{src/quantificationL\_1\_2.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include "{}quantification.\+h"{}}\newline
+{\ttfamily \#include "{}histogram.\+h"{}}\newline
+{\ttfamily \#include "{}type\+\_\+obj.\+h"{}}\newline
+{\ttfamily \#include "{}image.\+h"{}}\newline
+Graphe des dépendances par inclusion de quantification\+L\+\_\+1\+\_\+2.\+c\+:
+% FIG 0
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{quantificationL__1__2_8c_a6a7bdf09142145ab6f1781c550c2cf57}{quantification}} (\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h, int \texorpdfstring{$\ast$}{*}tab, int K)
+\begin{DoxyCompactList}\small\item\em Sélectionne les K couleurs les plus fréquentes de l\textquotesingle{}histogramme (Quantification par popularité). \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{quantificationL__1__2_8c_a6a45d5efc20ec3fedec64047591b058f}{norme\+\_\+infini}} (int R1, int G1, int B1, int R2, int G2, int B2)
+\item 
+int \mbox{\hyperlink{quantificationL__1__2_8c_a89ef0697948af6b52cb9e0764c55a3f3}{norme\+\_\+1}} (int R1, int G1, int B1, int R2, int G2, int B2)
+\item 
+int \mbox{\hyperlink{quantificationL__1__2_8c_a418727008837d42bc52574ac2c35a0b6}{distance\+\_\+\+L\+\_\+1\+\_\+2}} (int R1, int G1, int B1, int R2, int G2, int B2)
+\item 
+void \mbox{\hyperlink{quantificationL__1__2_8c_aad4b01bd0f1cc5e85fc9fb8ea2e49489}{mapping}} (image input, image output, int \texorpdfstring{$\ast$}{*}tab, int K)
+\begin{DoxyCompactList}\small\item\em Reconstruit une image en utilisant la palette de couleurs quantifiée (Mapping). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{quantificationL__1__2_8c_a418727008837d42bc52574ac2c35a0b6}\label{quantificationL__1__2_8c_a418727008837d42bc52574ac2c35a0b6} 
+\index{quantificationL\_1\_2.c@{quantificationL\_1\_2.c}!distance\_L\_1\_2@{distance\_L\_1\_2}}
+\index{distance\_L\_1\_2@{distance\_L\_1\_2}!quantificationL\_1\_2.c@{quantificationL\_1\_2.c}}
+\doxysubsubsection{\texorpdfstring{distance\_L\_1\_2()}{distance\_L\_1\_2()}}
+{\footnotesize\ttfamily int distance\+\_\+\+L\+\_\+1\+\_\+2 (\begin{DoxyParamCaption}\item[{int}]{R1,  }\item[{int}]{G1,  }\item[{int}]{B1,  }\item[{int}]{R2,  }\item[{int}]{G2,  }\item[{int}]{B2 }\end{DoxyParamCaption})}
+
+\Hypertarget{quantificationL__1__2_8c_aad4b01bd0f1cc5e85fc9fb8ea2e49489}\label{quantificationL__1__2_8c_aad4b01bd0f1cc5e85fc9fb8ea2e49489} 
+\index{quantificationL\_1\_2.c@{quantificationL\_1\_2.c}!mapping@{mapping}}
+\index{mapping@{mapping}!quantificationL\_1\_2.c@{quantificationL\_1\_2.c}}
+\doxysubsubsection{\texorpdfstring{mapping()}{mapping()}}
+{\footnotesize\ttfamily void mapping (\begin{DoxyParamCaption}\item[{image}]{input,  }\item[{image}]{output,  }\item[{int \texorpdfstring{$\ast$}{*}}]{tab,  }\item[{int}]{K }\end{DoxyParamCaption})}
+
+
+
+Reconstruit une image en utilisant la palette de couleurs quantifiée (Mapping). 
+
+
+\begin{DoxyItemize}
+\item Pour chaque pixel de l\textquotesingle{}image d\textquotesingle{}entrée {\ttfamily input}, cette fonction cherche la couleur la plus proche (au sens d\textquotesingle{}une distance mathématique) dans le tableau {\ttfamily tab} et écrit cette couleur dans {\ttfamily output}.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em input} & L\textquotesingle{}image originale en couleurs réelles. \\
+\hline
+{\em output} & L\textquotesingle{}image de destination (doit être déjà allouée avec les mêmes dimensions que input). \\
+\hline
+{\em tab} & Le tableau contenant les K couleurs de la palette (généré par quantification). \\
+\hline
+{\em K} & Le nombre de couleurs dans la palette. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{quantificationL__1__2_8c_a89ef0697948af6b52cb9e0764c55a3f3}\label{quantificationL__1__2_8c_a89ef0697948af6b52cb9e0764c55a3f3} 
+\index{quantificationL\_1\_2.c@{quantificationL\_1\_2.c}!norme\_1@{norme\_1}}
+\index{norme\_1@{norme\_1}!quantificationL\_1\_2.c@{quantificationL\_1\_2.c}}
+\doxysubsubsection{\texorpdfstring{norme\_1()}{norme\_1()}}
+{\footnotesize\ttfamily int norme\+\_\+1 (\begin{DoxyParamCaption}\item[{int}]{R1,  }\item[{int}]{G1,  }\item[{int}]{B1,  }\item[{int}]{R2,  }\item[{int}]{G2,  }\item[{int}]{B2 }\end{DoxyParamCaption})}
+
+\Hypertarget{quantificationL__1__2_8c_a6a45d5efc20ec3fedec64047591b058f}\label{quantificationL__1__2_8c_a6a45d5efc20ec3fedec64047591b058f} 
+\index{quantificationL\_1\_2.c@{quantificationL\_1\_2.c}!norme\_infini@{norme\_infini}}
+\index{norme\_infini@{norme\_infini}!quantificationL\_1\_2.c@{quantificationL\_1\_2.c}}
+\doxysubsubsection{\texorpdfstring{norme\_infini()}{norme\_infini()}}
+{\footnotesize\ttfamily int norme\+\_\+infini (\begin{DoxyParamCaption}\item[{int}]{R1,  }\item[{int}]{G1,  }\item[{int}]{B1,  }\item[{int}]{R2,  }\item[{int}]{G2,  }\item[{int}]{B2 }\end{DoxyParamCaption})}
+
+\Hypertarget{quantificationL__1__2_8c_a6a7bdf09142145ab6f1781c550c2cf57}\label{quantificationL__1__2_8c_a6a7bdf09142145ab6f1781c550c2cf57} 
+\index{quantificationL\_1\_2.c@{quantificationL\_1\_2.c}!quantification@{quantification}}
+\index{quantification@{quantification}!quantificationL\_1\_2.c@{quantificationL\_1\_2.c}}
+\doxysubsubsection{\texorpdfstring{quantification()}{quantification()}}
+{\footnotesize\ttfamily void quantification (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h,  }\item[{int \texorpdfstring{$\ast$}{*}}]{tab,  }\item[{int}]{K }\end{DoxyParamCaption})}
+
+
+
+Sélectionne les K couleurs les plus fréquentes de l\textquotesingle{}histogramme (Quantification par popularité). 
+
+
+\begin{DoxyItemize}
+\item Cette fonction parcourt l\textquotesingle{}histogramme pour identifier les K couleurs ayant le plus grand nombre d\textquotesingle{}occurrences. Elle remplit le tableau {\ttfamily tab} avec les composantes RGB de ces couleurs.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h} & L\textquotesingle{}histogramme de l\textquotesingle{}image source (déjà initialisé). \\
+\hline
+{\em tab} & Un tableau d\textquotesingle{}entiers alloué par l\textquotesingle{}appelant, de taille K \texorpdfstring{$\ast$}{*} 3. Il contiendra les triplets (R, G, B) des couleurs sélectionnées. \\
+\hline
+{\em K} & Le nombre de couleurs à conserver (taille de la palette). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}

@@ -1,0 +1,305 @@
+\doxysection{Référence du fichier src/histogram.c}
+\hypertarget{histogram_8c}{}\label{histogram_8c}\index{src/histogram.c@{src/histogram.c}}
+{\ttfamily \#include "{}histogram.\+h"{}}\newline
+{\ttfamily \#include "{}image.\+h"{}}\newline
+{\ttfamily \#include "{}type\+\_\+obj.\+h"{}}\newline
+{\ttfamily \#include $<$assert.\+h$>$}\newline
+Graphe des dépendances par inclusion de histogram.\+c\+:
+% FIG 0
+\doxysubsubsection*{Structures de données}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structcell}{cell}}
+\begin{DoxyCompactList}\small\item\em Représente un élément (noeud) d\textquotesingle{}une liste chaînée pour une couleur donnée. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Fonctions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{histogram_8c_afb4dc9d750875a89d3c3679e6d9fb94a}{create\+\_\+cell}} (int B, \mbox{\hyperlink{structcell}{cell}} next)
+\begin{DoxyCompactList}\small\item\em Alloue et initialise une nouvelle cellule. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{histogram_8c_acb4c1c0431182307eedf31f10fb41fb7}{insert\+\_\+cell}} (\mbox{\hyperlink{structcell}{cell}} head, int B)
+\begin{DoxyCompactList}\small\item\em Insère une valeur dans la liste chaînée en maintenant l\textquotesingle{}ordre croissant. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{histogram_8c_afba58c889262a3e25f4c3cd55f2b48a1}{delete\+\_\+list}} (\mbox{\hyperlink{structcell}{cell}} list)
+\begin{DoxyCompactList}\small\item\em Supprime l\textquotesingle{}intégralité d\textquotesingle{}une liste chaînée et libère la mémoire. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} \mbox{\hyperlink{histogram_8c_a9219a6ab5aca60e1b922daad17ce1a0f}{create\+\_\+histo}} ()
+\begin{DoxyCompactList}\small\item\em Alloue et initialise un histogramme vide. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{histogram_8c_ad27f6534676c201d6d62b1291dfeefeb}{init\+\_\+histo}} (\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h, image img)
+\begin{DoxyCompactList}\small\item\em Remplit l\textquotesingle{}histogramme à partir des données d\textquotesingle{}une image. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{histogram_8c_a04b37e2ba2a01ee9835bb7fc092838bf}{delete\+\_\+histo}} (\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h)
+\begin{DoxyCompactList}\small\item\em Libère toute la mémoire associée à l\textquotesingle{}histogramme. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{histogram_8c_ae30a64030a9000b38e802aa0e668eb81}{give\+\_\+freq\+\_\+histo}} (\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h, int R, int G, int B)
+\begin{DoxyCompactList}\small\item\em Récupère la fréquence (nombre d\textquotesingle{}occurrences) d\textquotesingle{}une couleur précise. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} \mbox{\hyperlink{histogram_8c_abb87b13e53b67f0759c60d0c41516792}{create\+\_\+histo\+\_\+iter}} (\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h)
+\begin{DoxyCompactList}\small\item\em Crée et initialise un itérateur sur l\textquotesingle{}histogramme. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{histogram_8c_a1774d8a8e7a82ddc9412bac3dd60785d}{start\+\_\+histo\+\_\+iter}} (\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} h\+\_\+i, \mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h)
+\begin{DoxyCompactList}\small\item\em Réinitialise l\textquotesingle{}itérateur au début de l\textquotesingle{}histogramme. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{histogram_8h_a7c6368b321bd9acd0149b030bb8275ed}{boolean}} \mbox{\hyperlink{histogram_8c_ade48a8939cad3501708e5c3d913b6035}{next\+\_\+histo\+\_\+iter}} (\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} h\+\_\+i, \mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} h)
+\begin{DoxyCompactList}\small\item\em Avance l\textquotesingle{}itérateur à la couleur suivante. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{histogram_8c_ae6e03b4f06123664fda9c6758b5faf7b}{give\+\_\+color\+\_\+histo\+\_\+iter}} (\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} h\+\_\+i, int \texorpdfstring{$\ast$}{*}tab)
+\begin{DoxyCompactList}\small\item\em Récupère la couleur courante pointée par l\textquotesingle{}itérateur. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{histogram_8c_a7ecd41283d0303b59958655f75daa5be}{delete\+\_\+histo\+\_\+iter}} (\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} h\+\_\+i)
+\begin{DoxyCompactList}\small\item\em Libère la mémoire allouée pour l\textquotesingle{}itérateur. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des fonctions}
+\Hypertarget{histogram_8c_afb4dc9d750875a89d3c3679e6d9fb94a}\label{histogram_8c_afb4dc9d750875a89d3c3679e6d9fb94a} 
+\index{histogram.c@{histogram.c}!create\_cell@{create\_cell}}
+\index{create\_cell@{create\_cell}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{create\_cell()}{create\_cell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell}{cell}} create\+\_\+cell (\begin{DoxyParamCaption}\item[{int}]{B,  }\item[{\mbox{\hyperlink{structcell}{cell}}}]{next }\end{DoxyParamCaption})}
+
+
+
+Alloue et initialise une nouvelle cellule. 
+
+
+\begin{DoxyItemize}
+\item Cette fonction alloue dynamiquement la mémoire pour une nouvelle structure cell. Elle initialise la fréquence à 1 par défaut.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em B} & La valeur de la composante bleue à stocker. \\
+\hline
+{\em next} & Pointeur vers la cellule suivante (ou NULL). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+cell Retourne la nouvelle cellule allouée, ou quitte le programme en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_a9219a6ab5aca60e1b922daad17ce1a0f}\label{histogram_8c_a9219a6ab5aca60e1b922daad17ce1a0f} 
+\index{histogram.c@{histogram.c}!create\_histo@{create\_histo}}
+\index{create\_histo@{create\_histo}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{create\_histo()}{create\_histo()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}} create\+\_\+histo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Alloue et initialise un histogramme vide. 
+
+
+\begin{DoxyItemize}
+\item Cette fonction alloue un tableau contigu de 256\texorpdfstring{$\ast$}{*}256 pointeurs de cellules. L\textquotesingle{}utilisation de calloc garantit que toutes les cases sont initialisées à NULL.
+\item \begin{DoxyReturn}{Renvoie}
+histo Le pointeur vers le tableau alloué, ou quitte en cas d\textquotesingle{}erreur. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_abb87b13e53b67f0759c60d0c41516792}\label{histogram_8c_abb87b13e53b67f0759c60d0c41516792} 
+\index{histogram.c@{histogram.c}!create\_histo\_iter@{create\_histo\_iter}}
+\index{create\_histo\_iter@{create\_histo\_iter}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{create\_histo\_iter()}{create\_histo\_iter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}} create\+\_\+histo\+\_\+iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Crée et initialise un itérateur sur l\textquotesingle{}histogramme. 
+
+
+\begin{DoxyItemize}
+\item L\textquotesingle{}itérateur est positionné sur la première couleur (R, G, B) existante (la première cellule non vide du tableau). Arrête le programme si l\textquotesingle{}histogramme est totalement vide.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h} & L\textquotesingle{}histogramme à parcourir. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+\doxylink{structhisto__iter}{histo\+\_\+iter} Un nouvel itérateur alloué dynamiquement. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_a04b37e2ba2a01ee9835bb7fc092838bf}\label{histogram_8c_a04b37e2ba2a01ee9835bb7fc092838bf} 
+\index{histogram.c@{histogram.c}!delete\_histo@{delete\_histo}}
+\index{delete\_histo@{delete\_histo}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{delete\_histo()}{delete\_histo()}}
+{\footnotesize\ttfamily void delete\+\_\+histo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Libère toute la mémoire associée à l\textquotesingle{}histogramme. 
+
+
+\begin{DoxyItemize}
+\item Parcourt chaque case du tableau {\ttfamily h} pour libérer les listes chaînées via \doxylink{histogram_8h_afba58c889262a3e25f4c3cd55f2b48a1}{delete\+\_\+list()}, puis libère le tableau lui-\/même.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h} & L\textquotesingle{}histogramme à détruire. Si {\ttfamily h} est NULL, la fonction ne fait rien. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_a7ecd41283d0303b59958655f75daa5be}\label{histogram_8c_a7ecd41283d0303b59958655f75daa5be} 
+\index{histogram.c@{histogram.c}!delete\_histo\_iter@{delete\_histo\_iter}}
+\index{delete\_histo\_iter@{delete\_histo\_iter}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{delete\_histo\_iter()}{delete\_histo\_iter()}}
+{\footnotesize\ttfamily void delete\+\_\+histo\+\_\+iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}}}]{h\+\_\+i }\end{DoxyParamCaption})}
+
+
+
+Libère la mémoire allouée pour l\textquotesingle{}itérateur. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h\+\_\+i} & L\textquotesingle{}itérateur à supprimer. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_afba58c889262a3e25f4c3cd55f2b48a1}\label{histogram_8c_afba58c889262a3e25f4c3cd55f2b48a1} 
+\index{histogram.c@{histogram.c}!delete\_list@{delete\_list}}
+\index{delete\_list@{delete\_list}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{delete\_list()}{delete\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell}{cell}} delete\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell}{cell}}}]{list }\end{DoxyParamCaption})}
+
+
+
+Supprime l\textquotesingle{}intégralité d\textquotesingle{}une liste chaînée et libère la mémoire. 
+
+
+\begin{DoxyItemize}
+\item Parcourt la liste en libérant chaque cellule une par une via free().
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em list} & Pointeur vers la tête de la liste à supprimer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+cell Retourne toujours NULL pour permettre une mise à jour sécurisée. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_ae6e03b4f06123664fda9c6758b5faf7b}\label{histogram_8c_ae6e03b4f06123664fda9c6758b5faf7b} 
+\index{histogram.c@{histogram.c}!give\_color\_histo\_iter@{give\_color\_histo\_iter}}
+\index{give\_color\_histo\_iter@{give\_color\_histo\_iter}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{give\_color\_histo\_iter()}{give\_color\_histo\_iter()}}
+{\footnotesize\ttfamily void give\+\_\+color\+\_\+histo\+\_\+iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}}}]{h\+\_\+i,  }\item[{int \texorpdfstring{$\ast$}{*}}]{rgb }\end{DoxyParamCaption})}
+
+
+
+Récupère la couleur courante pointée par l\textquotesingle{}itérateur. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h\+\_\+i} & L\textquotesingle{}itérateur (doit être valide). \\
+\hline
+{\em rgb} & Un tableau d\textquotesingle{}entiers de taille 3 (alloué par l\textquotesingle{}appelant) qui sera rempli \+: rgb\mbox{[}0\mbox{]} = Rouge, rgb\mbox{[}1\mbox{]} = Vert, rgb\mbox{[}2\mbox{]} = Bleu. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_ae30a64030a9000b38e802aa0e668eb81}\label{histogram_8c_ae30a64030a9000b38e802aa0e668eb81} 
+\index{histogram.c@{histogram.c}!give\_freq\_histo@{give\_freq\_histo}}
+\index{give\_freq\_histo@{give\_freq\_histo}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{give\_freq\_histo()}{give\_freq\_histo()}}
+{\footnotesize\ttfamily int give\+\_\+freq\+\_\+histo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h,  }\item[{int}]{R,  }\item[{int}]{G,  }\item[{int}]{B }\end{DoxyParamCaption})}
+
+
+
+Récupère la fréquence (nombre d\textquotesingle{}occurrences) d\textquotesingle{}une couleur précise. 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h} & L\textquotesingle{}histogramme à interroger. \\
+\hline
+{\em R} & Composante Rouge (0-\/255). \\
+\hline
+{\em G} & Composante Verte (0-\/255). \\
+\hline
+{\em B} & Composante Bleue (0-\/255). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+int Le nombre de pixels de cette couleur présents dans l\textquotesingle{}image (0 si la couleur n\textquotesingle{}existe pas). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_ad27f6534676c201d6d62b1291dfeefeb}\label{histogram_8c_ad27f6534676c201d6d62b1291dfeefeb} 
+\index{histogram.c@{histogram.c}!init\_histo@{init\_histo}}
+\index{init\_histo@{init\_histo}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{init\_histo()}{init\_histo()}}
+{\footnotesize\ttfamily void init\+\_\+histo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h,  }\item[{image}]{img }\end{DoxyParamCaption})}
+
+
+
+Remplit l\textquotesingle{}histogramme à partir des données d\textquotesingle{}une image. 
+
+
+\begin{DoxyItemize}
+\item Parcourt l\textquotesingle{}image {\ttfamily img} pixel par pixel. Pour chaque pixel (R, G, B), calcule l\textquotesingle{}index correspondant dans le tableau {\ttfamily h} et insère la composante B dans la liste chaînée appropriée.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h} & L\textquotesingle{}histogramme (déjà alloué) à remplir. \\
+\hline
+{\em img} & L\textquotesingle{}image source (doit être chargée en mémoire). \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_acb4c1c0431182307eedf31f10fb41fb7}\label{histogram_8c_acb4c1c0431182307eedf31f10fb41fb7} 
+\index{histogram.c@{histogram.c}!insert\_cell@{insert\_cell}}
+\index{insert\_cell@{insert\_cell}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{insert\_cell()}{insert\_cell()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell}{cell}} insert\+\_\+cell (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structcell}{cell}}}]{head,  }\item[{int}]{B }\end{DoxyParamCaption})}
+
+
+
+Insère une valeur dans la liste chaînée en maintenant l\textquotesingle{}ordre croissant. 
+
+
+\begin{DoxyItemize}
+\item Si une cellule contenant la valeur {\ttfamily B} existe déjà, sa fréquence est incrémentée. Sinon, une nouvelle cellule est créée et insérée à la position correcte pour garantir que la liste reste triée par ordre croissant de {\ttfamily B}.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em head} & Pointeur vers la tête de la liste actuelle. \\
+\hline
+{\em B} & La valeur de la composante bleue à insérer ou mettre à jour. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+cell Le pointeur vers la tête de la liste (qui peut avoir changé si l\textquotesingle{}insertion s\textquotesingle{}est faite en tête). 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_ade48a8939cad3501708e5c3d913b6035}\label{histogram_8c_ade48a8939cad3501708e5c3d913b6035} 
+\index{histogram.c@{histogram.c}!next\_histo\_iter@{next\_histo\_iter}}
+\index{next\_histo\_iter@{next\_histo\_iter}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{next\_histo\_iter()}{next\_histo\_iter()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{histogram_8h_a7c6368b321bd9acd0149b030bb8275ed}{boolean}} next\+\_\+histo\+\_\+iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}}}]{h\+\_\+i,  }\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Avance l\textquotesingle{}itérateur à la couleur suivante. 
+
+
+\begin{DoxyItemize}
+\item Parcourt la liste chaînée courante (B). Si la fin de la liste est atteinte, cherche la prochaine entrée (R, G) non vide dans le tableau.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h\+\_\+i} & L\textquotesingle{}itérateur à faire avancer. \\
+\hline
+{\em h} & L\textquotesingle{}histogramme associé. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Renvoie}
+boolean \textquotesingle{}true\textquotesingle{} si une nouvelle couleur a été trouvée, \textquotesingle{}false\textquotesingle{} si la fin de l\textquotesingle{}histogramme est atteinte. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}\Hypertarget{histogram_8c_a1774d8a8e7a82ddc9412bac3dd60785d}\label{histogram_8c_a1774d8a8e7a82ddc9412bac3dd60785d} 
+\index{histogram.c@{histogram.c}!start\_histo\_iter@{start\_histo\_iter}}
+\index{start\_histo\_iter@{start\_histo\_iter}!histogram.c@{histogram.c}}
+\doxysubsubsection{\texorpdfstring{start\_histo\_iter()}{start\_histo\_iter()}}
+{\footnotesize\ttfamily void start\+\_\+histo\+\_\+iter (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structhisto__iter}{histo\+\_\+iter}}}]{h\+\_\+i,  }\item[{\mbox{\hyperlink{histogram_8h_acb1fdd2407b2905f31a1093a15ba842f}{histo}}}]{h }\end{DoxyParamCaption})}
+
+
+
+Réinitialise l\textquotesingle{}itérateur au début de l\textquotesingle{}histogramme. 
+
+
+\begin{DoxyItemize}
+\item Repositionne l\textquotesingle{}itérateur sur la première couleur valide trouvée lors de la création.
+\item 
+\begin{DoxyParams}{Paramètres}
+{\em h\+\_\+i} & L\textquotesingle{}itérateur à réinitialiser. \\
+\hline
+{\em h} & L\textquotesingle{}histogramme associé. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}

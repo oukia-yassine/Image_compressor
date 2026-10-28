@@ -1,0 +1,18 @@
+\doxysection{Référence du fichier include/classe.h}
+\hypertarget{classe_8h}{}\label{classe_8h}\index{include/classe.h@{include/classe.h}}
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 0
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{classe_8h_a9d983f45e05b887e246d8e5c8904cdfa}{CLASSE}}(c\+\_\+ident)~typedef struct c\+\_\+ident \texorpdfstring{$\ast$}{*}c\+\_\+ident
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{classe_8h_a9d983f45e05b887e246d8e5c8904cdfa}\label{classe_8h_a9d983f45e05b887e246d8e5c8904cdfa} 
+\index{classe.h@{classe.h}!CLASSE@{CLASSE}}
+\index{CLASSE@{CLASSE}!classe.h@{classe.h}}
+\doxysubsubsection{\texorpdfstring{CLASSE}{CLASSE}}
+{\footnotesize\ttfamily \#define CLASSE(\begin{DoxyParamCaption}\item[{}]{c\+\_\+ident }\end{DoxyParamCaption})~typedef struct c\+\_\+ident \texorpdfstring{$\ast$}{*}c\+\_\+ident}
+

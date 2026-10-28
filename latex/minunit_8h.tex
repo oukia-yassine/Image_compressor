@@ -1,0 +1,298 @@
+\doxysection{Référence du fichier include/minunit.h}
+\hypertarget{minunit_8h}{}\label{minunit_8h}\index{include/minunit.h@{include/minunit.h}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Graphe des dépendances par inclusion de minunit.\+h\+:
+% FIG 0
+Ce graphe montre quels fichiers incluent directement ou indirectement ce fichier \+:
+% FIG 1
+\doxysubsubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\+\_\+\+MESSAGE\+\_\+\+LEN}}~1024
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a5720c3325f638c884373cfcaa77e547b}{MINUNIT\+\_\+\+EPSILON}}~1E-\/12
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a591ca1b29e41e52d7bf5bd74995b7d66}{MU\+\_\+\+TEST}}(method\+\_\+name)~static void method\+\_\+name(void)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_aeef69d8f319fd0a98c48f43c4105704f}{MU\+\_\+\+TEST\+\_\+\+SUITE}}(suite\+\_\+name)~static void suite\+\_\+name(void)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\+\_\+\+\_\+\+SAFE\+\_\+\+BLOCK}}(block)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a686f0ed4e3fb8ffd9687895b3a1de7f7}{MU\+\_\+\+RUN\+\_\+\+SUITE}}(suite\+\_\+name)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a09ec4c5d3a6468580c712306558fe0a2}{MU\+\_\+\+SUITE\+\_\+\+CONFIGURE}}(setup\+\_\+fun,  teardown\+\_\+fun)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_acef7e3a7858368882ef2b560be0d10bb}{MU\+\_\+\+RUN\+\_\+\+TEST}}(test)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a34507ed892909d3f420ebe93a6ad9975}{MU\+\_\+\+REPORT}}()
+\item 
+\#define \mbox{\hyperlink{minunit_8h_afa40e44f2c8a0afb36acface769ab13d}{MU\+\_\+\+EXIT\+\_\+\+CODE}}~minunit\+\_\+fail
+\item 
+\#define \mbox{\hyperlink{minunit_8h_ad8ca133baa1f0f576239631f37790b2b}{mu\+\_\+check}}(test)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a0e76010b259c57dcc09538622b5b88e1}{mu\+\_\+fail}}(message)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a63d86a2a5916a3cdd504f2c1547e11ac}{mu\+\_\+assert}}(test,  message)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a6e06771cca83af1cba7f3b64c8f6beeb}{mu\+\_\+assert\+\_\+int\+\_\+eq}}(expected,  result)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_ac15f5bc7e08dcd686b40f2c8329de2b7}{mu\+\_\+assert\+\_\+double\+\_\+eq}}(expected,  result)
+\item 
+\#define \mbox{\hyperlink{minunit_8h_a0b8c036d18cea962842f17cbb3ea2906}{mu\+\_\+assert\+\_\+string\+\_\+eq}}(expected,  result)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Documentation des macros}
+\Hypertarget{minunit_8h_a5720c3325f638c884373cfcaa77e547b}\label{minunit_8h_a5720c3325f638c884373cfcaa77e547b} 
+\index{minunit.h@{minunit.h}!MINUNIT\_EPSILON@{MINUNIT\_EPSILON}}
+\index{MINUNIT\_EPSILON@{MINUNIT\_EPSILON}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MINUNIT\_EPSILON}{MINUNIT\_EPSILON}}
+{\footnotesize\ttfamily \#define MINUNIT\+\_\+\+EPSILON~1E-\/12}
+
+\Hypertarget{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}\label{minunit_8h_a81bcce4f04ddd963158dca943feb68b2} 
+\index{minunit.h@{minunit.h}!MINUNIT\_MESSAGE\_LEN@{MINUNIT\_MESSAGE\_LEN}}
+\index{MINUNIT\_MESSAGE\_LEN@{MINUNIT\_MESSAGE\_LEN}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MINUNIT\_MESSAGE\_LEN}{MINUNIT\_MESSAGE\_LEN}}
+{\footnotesize\ttfamily \#define MINUNIT\+\_\+\+MESSAGE\+\_\+\+LEN~1024}
+
+\Hypertarget{minunit_8h_a721c79b9e21e95c890aef6388362658e}\label{minunit_8h_a721c79b9e21e95c890aef6388362658e} 
+\index{minunit.h@{minunit.h}!MU\_\_SAFE\_BLOCK@{MU\_\_SAFE\_BLOCK}}
+\index{MU\_\_SAFE\_BLOCK@{MU\_\_SAFE\_BLOCK}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_\_SAFE\_BLOCK}{MU\_\_SAFE\_BLOCK}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+\_\+\+SAFE\+\_\+\+BLOCK(\begin{DoxyParamCaption}\item[{}]{block }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{do}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ block\(\backslash\)}
+\DoxyCodeLine{\}\ \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a63d86a2a5916a3cdd504f2c1547e11ac}\label{minunit_8h_a63d86a2a5916a3cdd504f2c1547e11ac} 
+\index{minunit.h@{minunit.h}!mu\_assert@{mu\_assert}}
+\index{mu\_assert@{mu\_assert}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_assert}{mu\_assert}}
+{\footnotesize\ttfamily \#define mu\+\_\+assert(\begin{DoxyParamCaption}\item[{}]{test,  }\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!(test))\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ \%s"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ message);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_ac15f5bc7e08dcd686b40f2c8329de2b7}\label{minunit_8h_ac15f5bc7e08dcd686b40f2c8329de2b7} 
+\index{minunit.h@{minunit.h}!mu\_assert\_double\_eq@{mu\_assert\_double\_eq}}
+\index{mu\_assert\_double\_eq@{mu\_assert\_double\_eq}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_assert\_double\_eq}{mu\_assert\_double\_eq}}
+{\footnotesize\ttfamily \#define mu\+\_\+assert\+\_\+double\+\_\+eq(\begin{DoxyParamCaption}\item[{}]{expected,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minunit\_tmp\_e;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minunit\_tmp\_r;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_tmp\_e\ =\ (expected);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_tmp\_r\ =\ (result);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (fabs(minunit\_tmp\_e-\/minunit\_tmp\_r)\ >\ \mbox{\hyperlink{minunit_8h_a5720c3325f638c884373cfcaa77e547b}{MINUNIT\_EPSILON}})\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordtype}{int}\ minunit\_significant\_figures\ =\ 1\ -\/\ log10(\mbox{\hyperlink{minunit_8h_a5720c3325f638c884373cfcaa77e547b}{MINUNIT\_EPSILON}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ \%.*g\ expected\ but\ was\ \%.*g"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ minunit\_significant\_figures,\ minunit\_tmp\_e,\ minunit\_significant\_figures,\ minunit\_tmp\_r);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a6e06771cca83af1cba7f3b64c8f6beeb}\label{minunit_8h_a6e06771cca83af1cba7f3b64c8f6beeb} 
+\index{minunit.h@{minunit.h}!mu\_assert\_int\_eq@{mu\_assert\_int\_eq}}
+\index{mu\_assert\_int\_eq@{mu\_assert\_int\_eq}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_assert\_int\_eq}{mu\_assert\_int\_eq}}
+{\footnotesize\ttfamily \#define mu\+\_\+assert\+\_\+int\+\_\+eq(\begin{DoxyParamCaption}\item[{}]{expected,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ minunit\_tmp\_e;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{int}\ minunit\_tmp\_r;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_tmp\_e\ =\ (expected);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_tmp\_r\ =\ (result);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (minunit\_tmp\_e\ !=\ minunit\_tmp\_r)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ \%d\ expected\ but\ was\ \%d"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ minunit\_tmp\_e,\ minunit\_tmp\_r);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a0b8c036d18cea962842f17cbb3ea2906}\label{minunit_8h_a0b8c036d18cea962842f17cbb3ea2906} 
+\index{minunit.h@{minunit.h}!mu\_assert\_string\_eq@{mu\_assert\_string\_eq}}
+\index{mu\_assert\_string\_eq@{mu\_assert\_string\_eq}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_assert\_string\_eq}{mu\_assert\_string\_eq}}
+{\footnotesize\ttfamily \#define mu\+\_\+assert\+\_\+string\+\_\+eq(\begin{DoxyParamCaption}\item[{}]{expected,  }\item[{}]{result }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ minunit\_tmp\_e\ =\ expected;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ minunit\_tmp\_r\ =\ result;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!minunit\_tmp\_e)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_tmp\_e\ =\ \textcolor{stringliteral}{"{}<null\ pointer>"{}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!minunit\_tmp\_r)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_tmp\_r\ =\ \textcolor{stringliteral}{"{}<null\ pointer>"{}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if(strcmp(minunit\_tmp\_e,\ minunit\_tmp\_r))\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ '\%s'\ expected\ but\ was\ '\%s'"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ minunit\_tmp\_e,\ minunit\_tmp\_r);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_ad8ca133baa1f0f576239631f37790b2b}\label{minunit_8h_ad8ca133baa1f0f576239631f37790b2b} 
+\index{minunit.h@{minunit.h}!mu\_check@{mu\_check}}
+\index{mu\_check@{mu\_check}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_check}{mu\_check}}
+{\footnotesize\ttfamily \#define mu\+\_\+check(\begin{DoxyParamCaption}\item[{}]{test }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (!(test))\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ \%s"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ \#test);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\ \textcolor{keywordflow}{else}\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}."{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_afa40e44f2c8a0afb36acface769ab13d}\label{minunit_8h_afa40e44f2c8a0afb36acface769ab13d} 
+\index{minunit.h@{minunit.h}!MU\_EXIT\_CODE@{MU\_EXIT\_CODE}}
+\index{MU\_EXIT\_CODE@{MU\_EXIT\_CODE}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_EXIT\_CODE}{MU\_EXIT\_CODE}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+EXIT\+\_\+\+CODE~minunit\+\_\+fail}
+
+\Hypertarget{minunit_8h_a0e76010b259c57dcc09538622b5b88e1}\label{minunit_8h_a0e76010b259c57dcc09538622b5b88e1} 
+\index{minunit.h@{minunit.h}!mu\_fail@{mu\_fail}}
+\index{mu\_fail@{mu\_fail}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{mu\_fail}{mu\_fail}}
+{\footnotesize\ttfamily \#define mu\+\_\+fail(\begin{DoxyParamCaption}\item[{}]{message }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_assert++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ snprintf(minunit\_last\_message,\ \mbox{\hyperlink{minunit_8h_a81bcce4f04ddd963158dca943feb68b2}{MINUNIT\_MESSAGE\_LEN}},\ \textcolor{stringliteral}{"{}\%s\ failed:\(\backslash\)n\(\backslash\)t\%s:\%d:\ \%s"{}},\ \_\_func\_\_,\ \_\_FILE\_\_,\ \_\_LINE\_\_,\ message);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_status\ =\ 1;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{return};\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a34507ed892909d3f420ebe93a6ad9975}\label{minunit_8h_a34507ed892909d3f420ebe93a6ad9975} 
+\index{minunit.h@{minunit.h}!MU\_REPORT@{MU\_REPORT}}
+\index{MU\_REPORT@{MU\_REPORT}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_REPORT}{MU\_REPORT}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+REPORT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minunit\_end\_real\_timer;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ minunit\_end\_proc\_timer;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\(\backslash\)n\%d\ tests,\ \%d\ assertions,\ \%d\ failures\(\backslash\)n"{}},\ minunit\_run,\ minunit\_assert,\ minunit\_fail);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_end\_real\_timer\ =\ mu\_timer\_real();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_end\_proc\_timer\ =\ mu\_timer\_cpu();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nFinished\ in\ \%.8f\ seconds\ (real)\ \%.8f\ seconds\ (proc)\(\backslash\)n\(\backslash\)n"{}},\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_end\_real\_timer\ -\/\ minunit\_real\_timer,\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_end\_proc\_timer\ -\/\ minunit\_proc\_timer);\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a686f0ed4e3fb8ffd9687895b3a1de7f7}\label{minunit_8h_a686f0ed4e3fb8ffd9687895b3a1de7f7} 
+\index{minunit.h@{minunit.h}!MU\_RUN\_SUITE@{MU\_RUN\_SUITE}}
+\index{MU\_RUN\_SUITE@{MU\_RUN\_SUITE}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_RUN\_SUITE}{MU\_RUN\_SUITE}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+RUN\+\_\+\+SUITE(\begin{DoxyParamCaption}\item[{}]{suite\+\_\+name }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ suite\_name();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_setup\ =\ \mbox{\hyperlink{type__obj_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_teardown\ =\ \mbox{\hyperlink{type__obj_8h_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}};\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_acef7e3a7858368882ef2b560be0d10bb}\label{minunit_8h_acef7e3a7858368882ef2b560be0d10bb} 
+\index{minunit.h@{minunit.h}!MU\_RUN\_TEST@{MU\_RUN\_TEST}}
+\index{MU\_RUN\_TEST@{MU\_RUN\_TEST}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_RUN\_TEST}{MU\_RUN\_TEST}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+RUN\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{test }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordflow}{if}\ (minunit\_real\_timer==0\ \&\&\ minunit\_proc\_timer==0)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_real\_timer\ =\ mu\_timer\_real();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_proc\_timer\ =\ mu\_timer\_cpu();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (minunit\_setup)\ (*minunit\_setup)();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_status\ =\ 0;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ test();\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_run++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (minunit\_status)\ \{\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ minunit\_fail++;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}F"{}});\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n\%s\(\backslash\)n"{}},\ minunit\_last\_message);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ \}\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ fflush(stdout);\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ if\ (minunit\_teardown)\ (*minunit\_teardown)();\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a09ec4c5d3a6468580c712306558fe0a2}\label{minunit_8h_a09ec4c5d3a6468580c712306558fe0a2} 
+\index{minunit.h@{minunit.h}!MU\_SUITE\_CONFIGURE@{MU\_SUITE\_CONFIGURE}}
+\index{MU\_SUITE\_CONFIGURE@{MU\_SUITE\_CONFIGURE}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_SUITE\_CONFIGURE}{MU\_SUITE\_CONFIGURE}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+SUITE\+\_\+\+CONFIGURE(\begin{DoxyParamCaption}\item[{}]{setup\+\_\+fun,  }\item[{}]{teardown\+\_\+fun }\end{DoxyParamCaption})}
+
+{\bfseries Valeur \+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\ \ \ \ \mbox{\hyperlink{minunit_8h_a721c79b9e21e95c890aef6388362658e}{MU\_\_SAFE\_BLOCK}}(\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_setup\ =\ setup\_fun;\(\backslash\)}
+\DoxyCodeLine{\ \ \ \ minunit\_teardown\ =\ teardown\_fun;\(\backslash\)}
+\DoxyCodeLine{)}
+
+\end{DoxyCode}
+\Hypertarget{minunit_8h_a591ca1b29e41e52d7bf5bd74995b7d66}\label{minunit_8h_a591ca1b29e41e52d7bf5bd74995b7d66} 
+\index{minunit.h@{minunit.h}!MU\_TEST@{MU\_TEST}}
+\index{MU\_TEST@{MU\_TEST}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST}{MU\_TEST}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+TEST(\begin{DoxyParamCaption}\item[{}]{method\+\_\+name }\end{DoxyParamCaption})~static void method\+\_\+name(void)}
+
+\Hypertarget{minunit_8h_aeef69d8f319fd0a98c48f43c4105704f}\label{minunit_8h_aeef69d8f319fd0a98c48f43c4105704f} 
+\index{minunit.h@{minunit.h}!MU\_TEST\_SUITE@{MU\_TEST\_SUITE}}
+\index{MU\_TEST\_SUITE@{MU\_TEST\_SUITE}!minunit.h@{minunit.h}}
+\doxysubsubsection{\texorpdfstring{MU\_TEST\_SUITE}{MU\_TEST\_SUITE}}
+{\footnotesize\ttfamily \#define MU\+\_\+\+TEST\+\_\+\+SUITE(\begin{DoxyParamCaption}\item[{}]{suite\+\_\+name }\end{DoxyParamCaption})~static void suite\+\_\+name(void)}
+

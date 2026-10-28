@@ -1,0 +1,42 @@
+\doxysection{move\+\_\+type.\+h}
+\hypertarget{move__type_8h_source}{}\label{move__type_8h_source}\index{include/move\_type.h@{include/move\_type.h}}
+\mbox{\hyperlink{move__type_8h}{Aller à la documentation de ce fichier.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ MOVE\_TYPE\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ MOVE\_TYPE\_H}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{type__obj_8h}{type\_obj.h}}"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}};}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#define\ NB\_MOVE\ 4}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{preprocessor}{\#define\ RIGHT\ 0}}
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#define\ UP\ \ \ \ 1}}
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#define\ LEFT\ \ 2}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ DOWN\ \ 3}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#ifdef\ \_\_USE\_MOVE\_TYPE\_\_}}
+\DoxyCodeLine{00015\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ dep\_move\_x[4]\ =\ \{+1,\ 0,-\/1,\ 0\};}
+\DoxyCodeLine{00016\ \textcolor{keyword}{static}\ \textcolor{keywordtype}{int}\ dep\_move\_y[4]\ =\ \{\ 0,-\/1,\ 0,+1\};}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{/*\ R\ \ \ UP\ \ \ \ L\ \ \ \ \ D\ */}}
+\DoxyCodeLine{00018\ \textcolor{keyword}{static}\ \mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}}\ \_reverse[4]\ \ \ =\ \{\mbox{\hyperlink{move__type_8h_a437ef08681e7210d6678427030446a54}{LEFT}},\mbox{\hyperlink{move__type_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{DOWN}},\mbox{\hyperlink{move__type_8h_a80fb826a684cf3f0d306b22aa100ddac}{RIGHT}},\mbox{\hyperlink{move__type_8h_a1965eaca47dbf3f87acdafc2208f04eb}{UP}}\};}
+\DoxyCodeLine{00019\ \textcolor{keyword}{static}\ \mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}}\ \_next\_move[4]\ =\ \{\mbox{\hyperlink{move__type_8h_a1965eaca47dbf3f87acdafc2208f04eb}{UP}}\ \ ,\mbox{\hyperlink{move__type_8h_a437ef08681e7210d6678427030446a54}{LEFT}},\mbox{\hyperlink{move__type_8h_a4193cd1c8c2e6ebd0e056fa2364a663f}{DOWN}}\ ,\mbox{\hyperlink{move__type_8h_a80fb826a684cf3f0d306b22aa100ddac}{RIGHT}}\};}
+\DoxyCodeLine{00020\ \textcolor{keyword}{static}\ \mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6d}{bouleen}}\ \ \ \_horizontal[4]=\ \{\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da3e88fdefec20a04ccc848378627c1d35}{vrai}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da1c0a12426bd5d0e68b2969bc032d231a}{faux}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da3e88fdefec20a04ccc848378627c1d35}{vrai}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da1c0a12426bd5d0e68b2969bc032d231a}{faux}}\};}
+\DoxyCodeLine{00021\ \textcolor{keyword}{static}\ \mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6d}{bouleen}}\ \ \ \_vertical[4]\ \ =\ \{\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da1c0a12426bd5d0e68b2969bc032d231a}{faux}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da3e88fdefec20a04ccc848378627c1d35}{vrai}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da1c0a12426bd5d0e68b2969bc032d231a}{faux}},\mbox{\hyperlink{type__obj_8h_aea4f9ae42de35025a93234bc39666d6da3e88fdefec20a04ccc848378627c1d35}{vrai}}\};}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{preprocessor}{\#define\ REVERSE\_SENSE(m\_)\ \ \ (\ \_reverse[m\_])}}
+\DoxyCodeLine{00024\ \textcolor{preprocessor}{\#define\ NEXT\_DIRECTION(m\_)\ \ (\ \_next\_move[m\_])}}
+\DoxyCodeLine{00025\ \textcolor{preprocessor}{\#define\ IS\_CLOSED(or\_)\ \ \ \ \ \ (\ (\ (or\_)==\ 4)\ ||\ ((or\_)\ ==\ -\/4)\ )}}
+\DoxyCodeLine{00026\ \textcolor{preprocessor}{\#define\ TEST\_HORIZONTAL(m\_)\ (\ \_horizontal[m\_]\ )}}
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#define\ TEST\_VERTICAL(m\_)\ \ \ (\ \_vertical[m\_]\ )}}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{long}\ \mbox{\hyperlink{move__type_8h_a8fe03d13d7543b8dea90491941aae738}{move\_type\_compute\_step\_clock}}(\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}});}
+\DoxyCodeLine{00033\ \textcolor{keyword}{extern}\ \textcolor{keywordtype}{int}\ \ \mbox{\hyperlink{move__type_8h_af2f1bfa071d81619f0db7071bb1582be}{move\_type\_compute\_dist\_sigma\_1}}(\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}},\mbox{\hyperlink{move__type_8h_a84e320539584563e635b1513c1320eda}{move\_type}});}
+\DoxyCodeLine{00034\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{/*\ MOVE\_TYPE\_H*/}\textcolor{preprocessor}{}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ }
+
+\end{DoxyCode}

@@ -1,0 +1,55 @@
+\doxysection{Référence de la structure cell}
+\hypertarget{structcell}{}\label{structcell}\index{cell@{cell}}
+
+
+Représente un élément (noeud) d\textquotesingle{}une liste chaînée pour une couleur donnée.  
+
+
+
+
+Graphe de collaboration de cell\+:
+% FIG 0
+\doxysubsubsection*{Champs de données}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{structcell_a039ca2625b6290a5bdd1cc2b42ebe1ba}{B}}
+\item 
+int \mbox{\hyperlink{structcell_a8bef4fed6ac3c83e19f44fa9b79c7d11}{freq}}
+\item 
+\mbox{\hyperlink{structcell}{cell}} \mbox{\hyperlink{structcell_a09568f182bd113d5a39867d3638544a3}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Description détaillée}
+Représente un élément (noeud) d\textquotesingle{}une liste chaînée pour une couleur donnée. 
+
+
+\begin{DoxyItemize}
+\item Cette structure est utilisée pour gérer les collisions dans l\textquotesingle{}histogramme ou pour stocker les composantes de couleur (Bleu) associées à un couple (Rouge, Vert). 
+\end{DoxyItemize}
+
+\doxysubsection{Documentation des champs}
+\Hypertarget{structcell_a039ca2625b6290a5bdd1cc2b42ebe1ba}\label{structcell_a039ca2625b6290a5bdd1cc2b42ebe1ba} 
+\index{cell@{cell}!B@{B}}
+\index{B@{B}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{B}{B}}
+{\footnotesize\ttfamily unsigned char cell\+::B}
+
+La valeur de la composante Bleue (0-\/255). \Hypertarget{structcell_a8bef4fed6ac3c83e19f44fa9b79c7d11}\label{structcell_a8bef4fed6ac3c83e19f44fa9b79c7d11} 
+\index{cell@{cell}!freq@{freq}}
+\index{freq@{freq}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{freq}{freq}}
+{\footnotesize\ttfamily int cell\+::freq}
+
+Le nombre d\textquotesingle{}occurrences (fréquence) de cette couleur. \Hypertarget{structcell_a09568f182bd113d5a39867d3638544a3}\label{structcell_a09568f182bd113d5a39867d3638544a3} 
+\index{cell@{cell}!next@{next}}
+\index{next@{next}!cell@{cell}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structcell}{cell}} cell\+::next}
+
+Pointeur vers la cellule suivante dans la liste. 
+
+La documentation de cette structure a été générée à partir des fichiers suivants \+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{histogram_8c}{histogram.\+c}}\item 
+src/\mbox{\hyperlink{ppmhist_8c}{ppmhist.\+c}}\end{DoxyCompactItemize}
